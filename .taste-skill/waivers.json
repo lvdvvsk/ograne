@@ -1,1 +1,0 @@
-[{"check": "section-gaps", "target": "main#top > section.hero.hero--photo / section#mapa", "reason": "The full-bleed photo hero ends on the screen edge, so the gap to the first section is the system's own --padt (120px); the other gaps are measured between text blocks inside 900px sections and are larger by nature."}]
