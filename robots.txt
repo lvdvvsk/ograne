@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Boty wyszukiwarek AI – dostęp zostawiony, żeby mogły cytować serwis
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Crawler tylko treningowy – blokada
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://ograne.com/sitemap.xml
