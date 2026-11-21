@@ -1,0 +1,12 @@
+{
+ "history": [
+  {
+   "at": "2026-11-21T15:54:15.316Z",
+   "mode": "hook",
+   "host": "claude",
+   "decision": "block",
+   "reason": "podglad/index.html is a tasteskill page with no build armed: told how to arm it",
+   "stopHookActive": false
+  }
+ ]
+}

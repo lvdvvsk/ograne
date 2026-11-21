@@ -201,3 +201,7 @@ ul.checklist{list-style:none;padding-left:0}
 ul.checklist li{display:block;padding:6px 10px;margin:4px 0;background:var(--bg2);border:1px solid var(--line);border-radius:9px;cursor:pointer}
 ul.checklist li input{width:18px;height:18px;accent-color:#ff4fa3;vertical-align:-3px;margin:0 10px 0 0}
 ul.checklist li.done{opacity:.6;text-decoration:line-through}
+
+.logo img{display:block;height:52px;width:auto}
+@media(max-width:600px){.logo img{height:42px}}
+.fig--inline{max-width:640px}

@@ -1,0 +1,11 @@
+{
+ "page": "podglad/index.html",
+ "url": null,
+ "root": null,
+ "kind": "gaming",
+ "category": "przewodnik po GTA 6",
+ "primary": "Otwórz mapę",
+ "rounds": 3,
+ "start": "2026-11-21T15:54:24.868Z",
+ "by": "gate.mjs --start"
+}
