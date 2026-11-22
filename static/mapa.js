@@ -29,6 +29,9 @@
     icons[c] = L.divIcon({ className: "gm-dot", html: '<span style="background:' + COLORS[c] + '"></span>', iconSize: [14, 14], iconAnchor: [7, 7], popupAnchor: [0, -6] });
   });
 
+  var starIcon = L.divIcon({ className: "gm-dot gm-star-dot", html: "<span>★</span>", iconSize: [22, 22], iconAnchor: [11, 11], popupAnchor: [0, -10] });
+  var DESC = {}, onlyDesc = false;
+
   var cluster = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 42, disableClusteringAtZoom: 5, chunkedLoading: true });
   map.addLayer(cluster);
   var labelsLayer = L.layerGroup().addTo(map);
@@ -42,7 +45,17 @@
     var h = '<div class="gm-pop"><strong>' + esc(p[0]) + "</strong>";
     if (p[1]) h += '<div class="gm-area">' + esc(p[1]) + "</div>";
     h += '<div class="gm-cat"><span style="background:' + COLORS[p[4]] + '"></span>' + esc((T.cats || {})[p[4]] || p[4]) + "</div>";
-    if (p[5]) h += '<div class="gm-real"><b>' + esc(T.real || "") + ":</b> " + esc(p[5]) + "</div>";
+    var d = DESC[i];
+    if (d) {
+      h += '<p class="gm-desc">' + esc(d[0]) + "</p>";
+      if (d[1]) h += '<a class="gm-guide" href="' + esc(d[1]) + '">' + esc(T.guide || "→") + " →</a>";
+      if (p[5]) h += '<div class="gm-real"><b>' + esc(T.real || "") + ":</b> " + esc(p[5]) + "</div>";
+    } else {
+      var cat = (T.cats || {})[p[4]] || p[4];
+      var t = (T.auto || "{cat} – {area}.").replace("{cat}", cat).replace("{area}", p[1] || "Leonida");
+      if (p[5]) t += " " + (T.autoreal || "{real}").replace("{real}", p[5]);
+      h += '<p class="gm-desc">' + esc(t) + "</p>";
+    }
     var badges = [];
     if (p[7]) badges.push(T.enterable);
     if (p[6]) badges.push(T.unconfirmed);
@@ -53,7 +66,7 @@
 
   function refresh() {
     cluster.clearLayers();
-    var vis = all.filter(function (o) { return active[o.p[4]]; }).map(function (o) { return o.m; });
+    var vis = all.filter(function (o) { return active[o.p[4]] && (!onlyDesc || o.d); }).map(function (o) { return o.m; });
     cluster.addLayers(vis);
     document.getElementById("gm-count").textContent = (T.visible || "") + " " + vis.length + " / " + all.length;
   }
@@ -62,16 +75,20 @@
     var o = all[i];
     if (!o) return;
     if (!active[o.p[4]]) { active[o.p[4]] = true; var cb = document.querySelector('[data-cat="' + o.p[4] + '"]'); if (cb) cb.checked = true; refresh(); }
+    try { root.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {}
     map.setView(o.m.getLatLng(), 5);
     setTimeout(function () { cluster.zoomToShowLayer(o.m, function () { o.m.openPopup(); }); }, 250);
   }
 
-  fetch("/static/map/miejsca.json").then(function (r) { return r.json(); }).then(function (d) {
+  var opisy = fetch("/static/map/opisy-" + (T.lang || "pl") + ".json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+  Promise.all([fetch("/static/map/miejsca.json").then(function (r) { return r.json(); }), opisy]).then(function (res) {
+    var d = res[0]; DESC = res[1] || {};
     d.points.forEach(function (p, i) {
       if (!COLORS[p[4]]) p[4] = "other";
       counts[p[4]]++;
-      var m = L.marker([p[3], p[2]], { icon: icons[p[4]], title: p[0] }).bindPopup(popup(p, i));
-      all.push({ p: p, m: m, s: (p[0] + " " + p[1] + " " + p[5]).toLowerCase() });
+      var has = !!DESC[i];
+      var m = L.marker([p[3], p[2]], { icon: has ? starIcon : icons[p[4]], title: p[0], zIndexOffset: has ? 1000 : 0 }).bindPopup(popup(p, i), { maxWidth: 300 });
+      all.push({ p: p, m: m, d: has, s: (p[0] + " " + p[1] + " " + p[5] + " " + (has ? DESC[i][0] : "")).toLowerCase() });
     });
     d.labels.forEach(function (l) {
       var big = l[3] > 150;
@@ -86,8 +103,10 @@
       box.appendChild(lab);
     });
     box.addEventListener("change", function (e) { var c = e.target.getAttribute("data-cat"); if (c) { active[c] = e.target.checked; refresh(); } });
-    document.getElementById("gm-all").onclick = function () { ORDER.forEach(function (c) { active[c] = true; }); box.querySelectorAll("input").forEach(function (i) { i.checked = true; }); refresh(); };
-    document.getElementById("gm-none").onclick = function () { ORDER.forEach(function (c) { active[c] = false; }); box.querySelectorAll("input").forEach(function (i) { i.checked = false; }); refresh(); };
+    document.getElementById("gm-all").onclick = function () { ORDER.forEach(function (c) { active[c] = true; }); box.querySelectorAll("input[data-cat]").forEach(function (i) { i.checked = true; }); refresh(); };
+    document.getElementById("gm-none").onclick = function () { ORDER.forEach(function (c) { active[c] = false; }); box.querySelectorAll("input[data-cat]").forEach(function (i) { i.checked = false; }); refresh(); };
+    var only = document.getElementById("gm-only");
+    if (only) only.addEventListener("change", function () { onlyDesc = only.checked; refresh(); });
     refresh();
     var hm = location.hash.match(/p=(\d+)/);
     if (hm) focus(+hm[1]);
