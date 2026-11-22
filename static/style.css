@@ -214,3 +214,6 @@ ul.checklist li.done{opacity:.6;text-decoration:line-through}
 .map-opisy{list-style:none;padding:0;margin:0 0 18px}
 .map-opisy li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);line-height:1.5}
 .map-opisy .map-pin{font-weight:700;color:#ffd36b;text-decoration:none}
+.gm-rnav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.gm-rbtn{display:inline-flex;align-items:center;gap:4px;text-decoration:none}
+.map-opisy-h{margin:14px 0 4px}

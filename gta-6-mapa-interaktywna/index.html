@@ -45,7 +45,7 @@
 
 <div class="tldr"><strong>W skrócie</strong><ul><li><strong>928 miejsc</strong> na mapie Leonidy w 11 kategoriach: hotele, sklepy, transport, przyroda, urzędy i inne.</li><li><strong>Prawdziwe odpowiedniki:</strong> przy każdym miejscu widać budynek z Miami lub Florydy, na którym je wzorowano.</li><li><strong>Wyszukiwarka i filtry</strong>, pełny ekran i link do każdego punktu.</li><li>Podkład to <strong>rekonstrukcja społeczności</strong> (gtadb.org, CC BY 4.0) z materiałów przedpremierowych – w grze układ może się różnić.</li></ul></div>
 
-<nav class="toc" aria-label="Spis treści"><strong>Spis treści</strong><ol><li><a href="#jak-korzystac-z-mapy">Jak korzystać z mapy</a></li><li><a href="#opisy-miejsc-na-mapie">Opisy miejsc na mapie</a></li><li><a href="#co-jest-na-mapie">Co jest na mapie</a></li><li><a href="#najwazniejsze-obszary-na-mapie">Najważniejsze obszary na mapie</a></li><li><a href="#skad-pochodza-dane">Skąd pochodzą dane</a></li><li><a href="#faq">Najczęstsze pytania</a></li></ol></nav>
+<nav class="toc" aria-label="Spis treści"><strong>Spis treści</strong><ol><li><a href="#regiony-leonidy-na-mapie">Regiony Leonidy na mapie</a></li><li><a href="#jak-korzystac-z-mapy">Jak korzystać z mapy</a></li><li><a href="#co-jest-na-mapie">Co jest na mapie</a></li><li><a href="#skad-pochodza-dane">Skąd pochodzą dane</a></li><li><a href="#faq">Najczęstsze pytania</a></li></ol></nav>
 <div class="prose">
 <p><strong>Interaktywna mapa GTA 6 pokazuje 928 miejsc w stanie Leonida – od hoteli na Vice Beach po stacje i porty na Leonida Keys.</strong> Przy każdym punkcie widzisz dzielnicę, kategorię i prawdziwy budynek z Florydy, który był wzorem dla twórców. Mapę możesz przybliżać, filtrować i przeszukiwać.</p>
 <div class="gmap-wrap" id="gmap-root">
@@ -56,8 +56,250 @@
 <p class="gm-note">Podkład i lokalizacje to rekonstrukcja społeczności z materiałów przedpremierowych – w grze układ może się różnić.</p>
 </div>
 <link rel="stylesheet" href="/static/vendor/leaflet.css"><link rel="stylesheet" href="/static/vendor/MarkerCluster.css">
-<script>window.GMAP_I18N={"filters": "Filtry kategorii", "search": "Szukaj miejsca, dzielnicy lub odpowiednika (np. Ritz, airport)...", "visible": "Na mapie:", "full": "Pełny ekran", "exitfull": "Zamknij", "reset": "Cała mapa", "all": "Wszystkie", "none": "Żadne", "real": "Prawdziwy odpowiednik", "guide": "Czytaj poradnik", "onlydesc": "Tylko miejsca z opisem z poradników", "auto": "{cat} – okolica: {area}.", "autoreal": "Twórcy wzorowali się na: {real}.", "described": "opisane", "enterable": "można wejść do środka", "unconfirmed": "niepotwierdzone", "link": "Link do tego miejsca", "noresults": "Brak wyników", "error": "Nie udało się wczytać mapy", "note": "Podkład i lokalizacje to rekonstrukcja społeczności z materiałów przedpremierowych – w grze układ może się różnić.", "cats": {"landmark": "Punkty orientacyjne", "hotel": "Hotele", "food": "Jedzenie", "shop": "Sklepy i usługi", "leisure": "Rozrywka i sport", "transport": "Transport", "nature": "Przyroda", "public": "Urzędy i instytucje", "industry": "Przemysł", "home": "Mieszkalne", "other": "Inne"}, "attribution": "Mapa/Map: <a href=\"https://github.com/rolux/gtadb.org\" rel=\"nofollow noopener\" target=\"_blank\">gtadb.org and all contributors</a>, YANIS GTA VI Community Map – <a href=\"https://creativecommons.org/licenses/by/4.0/\" rel=\"nofollow noopener\" target=\"_blank\">CC BY 4.0</a>", "lang": "pl"};</script>
+<script>window.GMAP_I18N={"filters": "Filtry kategorii", "search": "Szukaj miejsca, dzielnicy lub odpowiednika (np. Ritz, airport)...", "visible": "Na mapie:", "full": "Pełny ekran", "exitfull": "Zamknij", "reset": "Cała mapa", "all": "Wszystkie", "none": "Żadne", "real": "Prawdziwy odpowiednik", "guide": "Czytaj poradnik", "onlydesc": "Tylko miejsca z opisem z poradników", "auto": "{cat} – okolica: {area}.", "autoreal": "Twórcy wzorowali się na: {real}.", "described": "opisane", "enterable": "można wejść do środka", "unconfirmed": "niepotwierdzone", "link": "Link do tego miejsca", "noresults": "Brak wyników", "error": "Nie udało się wczytać mapy", "note": "Podkład i lokalizacje to rekonstrukcja społeczności z materiałów przedpremierowych – w grze układ może się różnić.", "cats": {"landmark": "Punkty orientacyjne", "hotel": "Hotele", "food": "Jedzenie", "shop": "Sklepy i usługi", "leisure": "Rozrywka i sport", "transport": "Transport", "nature": "Przyroda", "public": "Urzędy i instytucje", "industry": "Przemysł", "home": "Mieszkalne", "other": "Inne"}, "attribution": "Mapa/Map: <a href=\"https://github.com/rolux/gtadb.org\" rel=\"nofollow noopener\" target=\"_blank\">gtadb.org and all contributors</a>, YANIS GTA VI Community Map – <a href=\"https://creativecommons.org/licenses/by/4.0/\" rel=\"nofollow noopener\" target=\"_blank\">CC BY 4.0</a>", "lang": "pl", "regions": {"vice-city": [[300, -300], 2], "leonida-keys": [[-5600, -2500], 2.5], "grassrivers": [[-3300, -3600], 2], "port-gellhorn": [[3200, -6000], 2], "ambrosia": [[3600, -2400], 2], "mount-kalaga": [[6800, -3300], 2]}};</script>
 <script src="/static/vendor/leaflet.js" defer></script><script src="/static/vendor/leaflet.markercluster.js" defer></script><script src="/static/mapa.js" defer></script>
+<nav class="gm-rnav" aria-label="Pokaż na mapie"><a class="gm-btn gm-rbtn" href="#r=vice-city">📍 Vice City</a><a class="gm-btn gm-rbtn" href="#r=leonida-keys">📍 Leonida Keys</a><a class="gm-btn gm-rbtn" href="#r=grassrivers">📍 Grassrivers</a><a class="gm-btn gm-rbtn" href="#r=port-gellhorn">📍 Port Gellhorn</a><a class="gm-btn gm-rbtn" href="#r=ambrosia">📍 Ambrosia</a><a class="gm-btn gm-rbtn" href="#r=mount-kalaga">📍 Mount Kalaga</a></nav>
+<h2 id="regiony-leonidy-na-mapie">Regiony Leonidy na mapie</h2>
+<p>Kliknij region, żeby przenieść się na mapę, albo przeczytaj opis każdego regionu poniżej – z listą miejsc oznaczonych na mapie złotą gwiazdką ★.</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Prawdziwy odpowiednik</th>
+<th>Charakter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vice City</td>
+<td>Miami</td>
+<td>metropolia: plaże, kluby, port, lotnisko, drapacze chmur</td>
+</tr>
+<tr>
+<td>Leonida Keys</td>
+<td>Florida Keys</td>
+<td>wyspy połączone mostami, tu zaczyna się gra</td>
+</tr>
+<tr>
+<td>Grassrivers</td>
+<td>Everglades</td>
+<td>bagna, namorzyny, aligatory, ślizgacze</td>
+</tr>
+<tr>
+<td>Port Gellhorn</td>
+<td>wybrzeże Zatoki (spekulacja fanów)</td>
+<td>podupadły kurort, motele, doki, kolej</td>
+</tr>
+<tr>
+<td>Ambrosia</td>
+<td>okolice jeziora Okeechobee (spekulacja fanów)</td>
+<td>miasto cukrowni Allied Crystal i gangu motocyklowego</td>
+</tr>
+<tr>
+<td>Mount Kalaga</td>
+<td>lasy północnej Florydy (spekulacja fanów)</td>
+<td>park narodowy: góry, polowania, off-road</td>
+</tr>
+</tbody>
+</table>
+<p>Odpowiedniki Vice City, Keys i Grassrivers są oczywiste. Przy pozostałych regionach to typowania społeczności, a nie słowa Rockstar.</p>
+<h3>Vice City – serce mapy GTA 6</h3>
+<p>Vice City to największe miasto Leonidy i „słoneczna stolica wakacji”. Plaże Ocean Beach i Vice Beach, kluby, luksusowe rezydencje, port wycieczkowców i międzynarodowe lotnisko. Według przedpremierowych zapowiedzi samo miasto jest około <strong>dwa razy większe od Los Santos</strong> z GTA 5. Fabuła przenosi się tu na dobre od rozdziału 3, ale pojechać możesz od początku gry.</p>
+<p><strong>Dzielnice:</strong> Little Cuba, Ocean Beach, Vice Beach, Washington Island, Crosstown, La Perle, Tequesta, Balsero, Stockyard, Decor District, Watson Bay, Peacock Estates i okolice lotniska w Vice-Dale.</p>
+<p><strong>Co tu znajdziesz po premierze:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Co</th>
+<th>Gdzie</th>
+<th>Po co</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yasmani (paser)</td>
+<td>Little Cuba</td>
+<td>najlepiej płaci za biżuterię i znaczone banknoty; zlecenia na jubilerów</td>
+</tr>
+<tr>
+<td>Tyrone (paser)</td>
+<td>La Perle</td>
+<td>najlepiej płaci za narkotyki</td>
+</tr>
+<tr>
+<td>Randy</td>
+<td>Balsero</td>
+<td>kupuje drogie auta – ponad 30 000 $ za egzemplarz</td>
+</tr>
+<tr>
+<td>Atlantic Court Garage</td>
+<td>Ocean Beach</td>
+<td>najdroższy garaż w grze – 40 000 $</td>
+</tr>
+<tr>
+<td>Supersamochody</td>
+<td>pod hotelami Vice Beach i Ocean Beach</td>
+<td>auta z listy Randy'ego</td>
+</tr>
+<tr>
+<td>Blok Dextera Morgana</td>
+<td>Washington Island</td>
+<td>easter egg z serialu „Dexter”</td>
+</tr>
+<tr>
+<td>Jajko na wieży</td>
+<td>najwyższa wieża radiowa</td>
+<td>ukryta scenka</td>
+</tr>
+<tr>
+<td>Knife Flights</td>
+<td>centrum</td>
+<td>prawie wszystkie z 40 przelotów między wieżowcami</td>
+</tr>
+<tr>
+<td>VCIA i VC Port</td>
+<td>wschodnie wybrzeże</td>
+<td>lotnisko i „światowa stolica wycieczkowców”</td>
+</tr>
+</tbody>
+</table>
+<p>Więcej: <a href="/gta-6-sekrety/">sekrety</a>, <a href="/gta-6-pieniadze/">jak zarabiać</a>.</p>
+<p><a class="gm-btn gm-rbtn" href="#r=vice-city">📍 Pokaż na mapie: Vice City</a></p><p class="map-opisy-h"><strong>★ Opisane miejsca w regionie</strong></p><ul class="map-opisy"><li><a href="#p=112" class="map-pin">★ VCIA Control Tower</a> – Lotnisko Vice City International (VCIA). Trofeum Catch Me If You Can wymaga niezaplanowanego odlotu z tego lotniska. <a href="/gta-6-trofea/">Czytaj poradnik →</a></li><li><a href="#p=183" class="map-pin">★ The Vault</a> – Klub The Vault w Downtown. Czerwony plakat tuż za wejściem odblokowuje po zeskanowaniu stację The Vault w radiu. <a href="/gta-6-znajdzki/">Czytaj poradnik →</a></li><li><a href="#p=66" class="map-pin">★ Grand Majestic</a> – Grand Majestic w Tequesta. W kuchni na piętrze siłowni leży karta kolekcjonerska, a na dachu budynku obok – kolejna (wjazd windą). <a href="/gta-6-znajdzki/">Czytaj poradnik →</a></li><li><a href="#p=26" class="map-pin">★ Vice Beach Marina</a> – Marina Vice Beach w Ocean Beach. Pod hotelami w tej części miasta najczęściej stoją supersamochody z listy Randy&#x27;ego. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=173" class="map-pin">★ Leaf Links Golf Club</a> – Leaf Links – pełne pole golfowe w Vice Beach (wyzwanie Leaf Links Golf Challenge). <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li><li><a href="#p=320" class="map-pin">★ Phil&#x27;s Ammu-Nation</a> – Phil&#x27;s Ammu-Nation – sklep z bronią Phila, nowej wersji Phila Cassidy&#x27;ego z Vice City. W każdym Ammu-Nation jest szafka z twoją bronią. <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li></ul>
+<h3>Leonida Keys – początek gry</h3>
+<p>Fabuła startuje na <strong>Leonida Keys</strong> – łańcuchu wysp połączonych długimi mostami. Cały rozdział 1 dzieje się głównie na wyspie <strong>Key Lento</strong>, a Rockstar pisze o tutejszych wodach jako o jednych z najpiękniejszych i najniebezpieczniejszych w Ameryce.</p>
+<p><strong>Co tu znajdziesz:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Co</th>
+<th>Gdzie</th>
+<th>Po co</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dom Jasona</td>
+<td>Key Lento</td>
+<td>kryjówka rozdziału 1 – <strong>przepada po misji Tourist Trap</strong> (razem z jedną medytacją i 4 czasopismami)</td>
+</tr>
+<tr>
+<td>Ammu-Nation</td>
+<td>obok domu Jasona</td>
+<td>pierwszy sklep z bronią (misja Gear Up)</td>
+</tr>
+<tr>
+<td>Bar Rusty Anchor</td>
+<td>północ Key Lento</td>
+<td>misje Coming Home i Day Release</td>
+</tr>
+<tr>
+<td>Marina Briana</td>
+<td>Key Lento</td>
+<td>start misji Down to Earth i Swamped; schowek Briana to pierwszy paser</td>
+</tr>
+<tr>
+<td>Sklep Kentona Reesa</td>
+<td>przy plaży</td>
+<td>wątek skarbów: 7 zestawów, 33 podwodne znaleziska</td>
+</tr>
+<tr>
+<td>Coastal Auto Care</td>
+<td>Key Lento</td>
+<td>warsztat z misji Just a Scratch</td>
+</tr>
+<tr>
+<td>Shirley</td>
+<td>sąsiadka Jasona</td>
+<td>2 zadania do przegapienia (tylko rozdz. 1)</td>
+</tr>
+<tr>
+<td>Maroon Key</td>
+<td>stacja radarowa</td>
+<td>misja Hey Arnold!</td>
+</tr>
+<tr>
+<td>Gambit Bay</td>
+<td>otwarte wody</td>
+<td>Cool Dog – pies na skuterze wodnym</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ważne:</strong> zanim zaczniesz Tourist Trap, zrób osobny zapis i wpłać gotówkę do BuckMe – pieniądze z rozdziału 1 przepadają.</p>
+<p><a class="gm-btn gm-rbtn" href="#r=leonida-keys">📍 Pokaż na mapie: Leonida Keys</a></p><p class="map-opisy-h"><strong>★ Opisane miejsca w regionie</strong></p><ul class="map-opisy"><li><a href="#p=78" class="map-pin">★ Jason&#x27;s House</a> – Kryjówka Jasona w rozdziale 1 – dom należy do Briana. Tu robisz remont przed powrotem Lucii, medytację na balkonie i czytasz 4 czasopisma. Uwaga: dom przepada na zawsze po misji Tourist Trap. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=106" class="map-pin">★ The Rusty Anchor</a> – Bar z misji Coming Home i Day Release: impreza po wyjściu Lucii z więzienia, zespół na scenie i bójka. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=107" class="map-pin">★ Brian&#x27;s Boat Works &amp; Marina</a> – Marina Briana Hedera – start misji Down to Earth i Swamped. Schowek Briana to pierwszy paser w grze (po Lab Fees), ale płaci bardzo nisko. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=111" class="map-pin">★ 24/7 Supermarket</a> – Sklep 24/7 w Key Lento. Na stojaku z gazetami leży jedno z czasopism do kolekcji (RX Men). <a href="/gta-6-znajdzki/">Czytaj poradnik →</a></li><li><a href="#p=239" class="map-pin">★ Donovan Roeder Jr. Community Center</a> – Dom kultury, w którym pracuje Lucia. W zadaniu Clock Out odbierz ją stąd przed 16:00 – poprawia to relację pary. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=80" class="map-pin">★ Air Force Radar Station</a> – Stacja radarowa na Maroon Key – miejsce misji Hey Arnold! z Brianem i Calem, z wyborem na końcu. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=918" class="map-pin">★ Gambit Bay</a> – Gambit Bay – tu najłatwiej trafić na Cool Doga. Utknij w morzu bez łodzi, wsiądź na jego skuter i nie zsiadaj: zabierze cię na Wyspę Psów (ok. 1200 $). <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li></ul>
+<h3>Grassrivers – bagna i aligatory</h3>
+<p>Grassrivers to mokradła pełne kanałów, namorzynów i aligatorów – odpowiednik Everglades. Po wodzie najlepiej poruszać się <strong>ślizgaczem (airboat)</strong> albo poduszkowcem. Na bagnach Mariana County działa gang <strong>Kingfishers</strong>, a w Pelican Valley są ich tereny.</p>
+<p><strong>Co tu znajdziesz:</strong></p>
+<ul>
+<li><strong>Skunk Ape (Bigfoot)</strong> – misje Kirka zaczynają się od ulotki (np. w barze Skeeter's w Hamlet); część tylko nocą,</li>
+<li><strong>Find the Lost Drugs</strong> – zgubione paczki w 4 strefach: Recreation Area, Burned Houses, Pelican Valley i Thorpe Adventures,</li>
+<li><strong>obóz Kingfishers</strong> – baza gangu z misji Gone Fishing i Swamped,</li>
+<li><strong>zwierzęta</strong> – aligatory i ptaki bagienne; do kompendium wystarczy spojrzeć przez lornetkę,</li>
+<li><strong>więzienie w Hamlet</strong> – tu zaczyna się prolog.</li>
+</ul>
+<p><a class="gm-btn gm-rbtn" href="#r=grassrivers">📍 Pokaż na mapie: Grassrivers</a></p><p class="map-opisy-h"><strong>★ Opisane miejsca w regionie</strong></p><ul class="map-opisy"><li><a href="#p=214" class="map-pin">★ Main Prison Building</a> – Więzienie Leonida Penitentiary w Hamlet. Tu zaczyna się prolog (grasz Lucią) i stąd Jason odbiera ją w misji Coming Home. <a href="/gta-6-fabula/">Czytaj poradnik →</a></li><li><a href="#p=664" class="map-pin">★ Fleeca</a> – Lombard Payday Loan w Hamlet – jedno z miejsc prologu. W dalszej grze Payday Loans to cele napadów (do 100% trzeba 7). <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=917" class="map-pin">★ Pelican River</a> – Pelican River na bagnach Mariana County – teren misji Kirka (Skunk Ape, czyli Bigfoot) i zadań Find the Lost Drugs. Wylegują się tu aligatory. <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li><li><a href="#p=196" class="map-pin">★ Grassrivers Visitor Center</a> – Centrum turystyczne Grassrivers – brama do bagien. Po kanałach najlepiej poruszać się ślizgaczem albo poduszkowcem. <a href="/gta-6-mapa/">Czytaj poradnik →</a></li><li><a href="#p=500" class="map-pin">★ Casino</a> – Kasyno w Buckskin. Niedaleko, przy szosie przez Buckskin Swamp, jest bar Kowaachobee z bilardem, minigolf King Gator i medytacja Swamp. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li></ul>
+<h3>Port Gellhorn – zapomniane wybrzeże</h3>
+<p>Rockstar nazywa Port Gellhorn „zapomnianym wybrzeżem Leonidy”: dawny kurort w Kelly County z tanimi motelami, zamkniętymi atrakcjami i pustymi centrami handlowymi. To główna scena rozdziału 2.</p>
+<p><strong>Co tu znajdziesz:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Co</th>
+<th>Po co</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starlet Motel</td>
+<td>kryjówka rozdziału 2</td>
+</tr>
+<tr>
+<td>Warsztat Mosesa</td>
+<td>skup aut bez trackera i rejestracja</td>
+</tr>
+<tr>
+<td>Port Gellhorn Station Garage</td>
+<td>pierwszy darmowy garaż (po Daily Driver)</td>
+</tr>
+<tr>
+<td>Dunk</td>
+<td>paser od rozdziału 2, dostępny też po fabule</td>
+</tr>
+<tr>
+<td>Wyman's World Auto Salvage</td>
+<td>złomowisko Wymana</td>
+</tr>
+<tr>
+<td>Thrillbilly Mud Club</td>
+<td>wyścigi błotne, początek wątku Billy'ego</td>
+</tr>
+<tr>
+<td>UFO</td>
+<td>na wschód od miasta, przy Starlet Motel, o 2:00 w nocy</td>
+</tr>
+</tbody>
+</table>
+<p><a class="gm-btn gm-rbtn" href="#r=port-gellhorn">📍 Pokaż na mapie: Port Gellhorn</a></p><p class="map-opisy-h"><strong>★ Opisane miejsca w regionie</strong></p><ul class="map-opisy"><li><a href="#p=94" class="map-pin">★ Starlet Motel Sign</a> – Starlet Motel – kryjówka rozdziału 2. Na wschód stąd o 2:00 w nocy pojawia się UFO (trofeum „The Truth is Out There”). <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li><li><a href="#p=165" class="map-pin">★ Thrillbilly Mud Club</a> – Błotny tor Thrillbilly Mud Club – tu zaczyna się wątek Billy&#x27;ego (misja Thrillbillies). 10 wygranych tu, na Gellhorn Raceway i Boone Speedway odblokowuje kod naprawy auta. <a href="/gta-6-misje-poboczne/">Czytaj poradnik →</a></li><li><a href="#p=87" class="map-pin">★ Gellhorn International Raceway</a> – Gellhorn International Raceway – tor wyścigowy wzorowany na Sebring. Jeden z trzech torów liczących się do kodu naprawy pojazdu. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li><li><a href="#p=89" class="map-pin">★ Pawn &amp; Gun</a> – Lombard z bronią Pawn &amp; Gun w Port Gellhorn – kupisz tu broń i amunicję. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=197" class="map-pin">★ Delights</a> – Klub Delights przy autostradzie. Na północ od niego, przy warsztacie Mosesa, jest darmowy garaż Port Gellhorn Station (po misji Daily Driver). <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=363" class="map-pin">★ Manifest Canyon</a> – Manifest Canyon – czerwone skały z medytacją Red Rocks, w pobliżu miejsca, gdzie tory przecinają szosę. <a href="/gta-6-medytacje/">Czytaj poradnik →</a></li></ul>
+<h3>Ambrosia – miasto jednej fabryki</h3>
+<p>Ambrosia żyje z jednej firmy: <strong>rafinerii cukru Allied Crystal</strong>. Resztą „usług” w okolicy zajmuje się gang motocyklowy <strong>Final Chapter</strong>. Miasto leży nad <strong>Lake Leonida</strong>, otoczone polami i fabrykami.</p>
+<p><strong>Co tu znajdziesz:</strong></p>
+<ul>
+<li>dwa garaże do kupienia: <strong>Wyatt Motors</strong> (21 600 $, centrum) i <strong>Store n' Bolt</strong> (16 800 $, północ),</li>
+<li><strong>Ambrosia Raceway</strong> – demolition derby, w którym wygrana daje kilka tysięcy dolarów,</li>
+<li>parking policyjny z misji „The Impaler” (wątek Billy'ego).</li>
+</ul>
+<p>Niedaleko, w <strong>Belville (Leonard County)</strong>, stoi dom ze zdjęcia z GTA San Andreas – jeden z najciekawszych sekretów gry.</p>
+<p><a class="gm-btn gm-rbtn" href="#r=ambrosia">📍 Pokaż na mapie: Ambrosia</a></p><p class="map-opisy-h"><strong>★ Opisane miejsca w regionie</strong></p><ul class="map-opisy"><li><a href="#p=131" class="map-pin">★ Sugar Mill</a> – Cukrownia Allied Crystal – jedyny duży pracodawca Ambrosii. Resztą okolicy rządzi gang motocyklowy Final Chapter. <a href="/gta-6-mapa/">Czytaj poradnik →</a></li><li><a href="#p=188" class="map-pin">★ Ambrosia Raceway Park</a> – Ambrosia Raceway – demolition derby. Wygrana daje ok. 3 800–6 300 $, a auto można wypożyczyć za kilkaset dolarów. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=825" class="map-pin">★ Leonard County Sheriff&#x27;s Office</a> – Belville w Leonard County. W tej okolicy stoi dom ze zdjęcia z GTA San Andreas – w garażu kryjówka spiskowca z notatkami o „J” i „L”. <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li><li><a href="#p=33" class="map-pin">★ Evergreen Mall</a> – Evergreen Mall w Waning Sands. W okolicy jest minigolf Frontier Adventure Golf, pole Mount Hailes Club i medytacja Seaside na plaży na wschodzie. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li></ul>
+<h3>Mount Kalaga – park narodowy</h3>
+<p>Na północy stanu leży <strong>Mount Kalaga National Park</strong> w Lummox County: góry, lasy i doliny rzeczne. To najdziksza część mapy, klimatem bliska Red Dead Redemption 2.</p>
+<p><strong>Co tu znajdziesz:</strong></p>
+<ul>
+<li><strong>polowania dla Breta Vogela</strong> – 15 zleceń (tylko Jason), za czysty strzał w głowę lub serce lepsza cena,</li>
+<li><strong>wędkowanie</strong> – Rockstar szczególnie poleca te okolice,</li>
+<li><strong>medytacje</strong> – Jutting Cliff przy kopalni, wodospad koło Tallaloko, a na szczycie Mount Kalaga ostatnia, 18. medytacja,</li>
+<li><strong>zagadka z wieżą obserwacyjną</strong> na północy – recenzenci wspominają o tropach i kodach QR w świecie gry.</li>
+</ul>
+<p>Wszystkie miejsca medytacji: <a href="/gta-6-medytacje/">medytacje w GTA 6</a>.</p>
+<p><a class="gm-btn gm-rbtn" href="#r=mount-kalaga">📍 Pokaż na mapie: Mount Kalaga</a></p><p class="map-opisy-h"><strong>★ Opisane miejsca w regionie</strong></p><ul class="map-opisy"><li><a href="#p=171" class="map-pin">★ Mount Kalaga</a> – Szczyt Mount Kalaga – kamienny krąg z ostatnią, 18. medytacją (Ascent Mountain). Odblokowuje się po wszystkich pozostałych. <a href="/gta-6-medytacje/">Czytaj poradnik →</a></li><li><a href="#p=629" class="map-pin">★ Lake Tallaloko</a> – Jezioro Tallaloko. Na północny zachód stąd, nad wodospadem, jest medytacja Waterfall. <a href="/gta-6-medytacje/">Czytaj poradnik →</a></li><li><a href="#p=895" class="map-pin">★ Jacob&#x27;s Tavern Bar</a> – Jacob&#x27;s Tavern w Millport – bar z bilardem obok Pay &#x27;n&#x27; Spray. Leży tu też książka o kowboju z New Austin, ukłon w stronę Red Dead Redemption. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li></ul>
 <h2 id="jak-korzystac-z-mapy">Jak korzystać z mapy</h2>
 <ol>
 <li><strong>Przybliżaj i przesuwaj</strong> – kółkiem myszy, przyciskami +/− albo gestem na telefonie.</li>
@@ -67,9 +309,6 @@
 <li><strong>Pełny ekran</strong> – przycisk nad mapą rozciąga ją na cały ekran.</li>
 </ol>
 <p>Skupiska punktów są zgrupowane w kółka z liczbą. Kliknij kółko albo przybliż mapę, żeby je rozwinąć.</p>
-<h2 id="opisy-miejsc-na-mapie">Opisy miejsc na mapie</h2>
-<p>Złote gwiazdki ★ na mapie to miejsca opisane w naszych poradnikach: kryjówki, bary z misji, paserzy, tory, medytacje i sekrety (UFO, Bigfoot, Cool Dog). Kliknij gwiazdkę, żeby zobaczyć opis i przejść do poradnika, albo zaznacz w filtrach „Tylko miejsca z opisem”. Każdy pozostały punkt ma krótki opis: kategorię, okolicę i prawdziwy budynek, na którym wzorowali się twórcy.</p>
-<h3>Leonida Keys</h3><ul class="map-opisy"><li><a href="#p=78" class="map-pin">★ Jason&#x27;s House</a> – Kryjówka Jasona w rozdziale 1 – dom należy do Briana. Tu robisz remont przed powrotem Lucii, medytację na balkonie i czytasz 4 czasopisma. Uwaga: dom przepada na zawsze po misji Tourist Trap. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=106" class="map-pin">★ The Rusty Anchor</a> – Bar z misji Coming Home i Day Release: impreza po wyjściu Lucii z więzienia, zespół na scenie i bójka. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=107" class="map-pin">★ Brian&#x27;s Boat Works &amp; Marina</a> – Marina Briana Hedera – start misji Down to Earth i Swamped. Schowek Briana to pierwszy paser w grze (po Lab Fees), ale płaci bardzo nisko. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=111" class="map-pin">★ 24/7 Supermarket</a> – Sklep 24/7 w Key Lento. Na stojaku z gazetami leży jedno z czasopism do kolekcji (RX Men). <a href="/gta-6-znajdzki/">Czytaj poradnik →</a></li><li><a href="#p=239" class="map-pin">★ Donovan Roeder Jr. Community Center</a> – Dom kultury, w którym pracuje Lucia. W zadaniu Clock Out odbierz ją stąd przed 16:00 – poprawia to relację pary. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=80" class="map-pin">★ Air Force Radar Station</a> – Stacja radarowa na Maroon Key – miejsce misji Hey Arnold! z Brianem i Calem, z wyborem na końcu. <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=918" class="map-pin">★ Gambit Bay</a> – Gambit Bay – tu najłatwiej trafić na Cool Doga. Utknij w morzu bez łodzi, wsiądź na jego skuter i nie zsiadaj: zabierze cię na Wyspę Psów (ok. 1200 $). <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li></ul><h3>Grassrivers i Hamlet</h3><ul class="map-opisy"><li><a href="#p=214" class="map-pin">★ Main Prison Building</a> – Więzienie Leonida Penitentiary w Hamlet. Tu zaczyna się prolog (grasz Lucią) i stąd Jason odbiera ją w misji Coming Home. <a href="/gta-6-fabula/">Czytaj poradnik →</a></li><li><a href="#p=664" class="map-pin">★ Fleeca</a> – Lombard Payday Loan w Hamlet – jedno z miejsc prologu. W dalszej grze Payday Loans to cele napadów (do 100% trzeba 7). <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=917" class="map-pin">★ Pelican River</a> – Pelican River na bagnach Mariana County – teren misji Kirka (Skunk Ape, czyli Bigfoot) i zadań Find the Lost Drugs. Wylegują się tu aligatory. <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li><li><a href="#p=196" class="map-pin">★ Grassrivers Visitor Center</a> – Centrum turystyczne Grassrivers – brama do bagien. Po kanałach najlepiej poruszać się ślizgaczem albo poduszkowcem. <a href="/gta-6-mapa/">Czytaj poradnik →</a></li><li><a href="#p=500" class="map-pin">★ Casino</a> – Kasyno w Buckskin. Niedaleko, przy szosie przez Buckskin Swamp, jest bar Kowaachobee z bilardem, minigolf King Gator i medytacja Swamp. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li></ul><h3>Vice City</h3><ul class="map-opisy"><li><a href="#p=112" class="map-pin">★ VCIA Control Tower</a> – Lotnisko Vice City International (VCIA). Trofeum Catch Me If You Can wymaga niezaplanowanego odlotu z tego lotniska. <a href="/gta-6-trofea/">Czytaj poradnik →</a></li><li><a href="#p=183" class="map-pin">★ The Vault</a> – Klub The Vault w Downtown. Czerwony plakat tuż za wejściem odblokowuje po zeskanowaniu stację The Vault w radiu. <a href="/gta-6-znajdzki/">Czytaj poradnik →</a></li><li><a href="#p=66" class="map-pin">★ Grand Majestic</a> – Grand Majestic w Tequesta. W kuchni na piętrze siłowni leży karta kolekcjonerska, a na dachu budynku obok – kolejna (wjazd windą). <a href="/gta-6-znajdzki/">Czytaj poradnik →</a></li><li><a href="#p=26" class="map-pin">★ Vice Beach Marina</a> – Marina Vice Beach w Ocean Beach. Pod hotelami w tej części miasta najczęściej stoją supersamochody z listy Randy&#x27;ego. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=173" class="map-pin">★ Leaf Links Golf Club</a> – Leaf Links – pełne pole golfowe w Vice Beach (wyzwanie Leaf Links Golf Challenge). <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li><li><a href="#p=320" class="map-pin">★ Phil&#x27;s Ammu-Nation</a> – Phil&#x27;s Ammu-Nation – sklep z bronią Phila, nowej wersji Phila Cassidy&#x27;ego z Vice City. W każdym Ammu-Nation jest szafka z twoją bronią. <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li></ul><h3>Port Gellhorn i Kelly County</h3><ul class="map-opisy"><li><a href="#p=94" class="map-pin">★ Starlet Motel Sign</a> – Starlet Motel – kryjówka rozdziału 2. Na wschód stąd o 2:00 w nocy pojawia się UFO (trofeum „The Truth is Out There”). <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li><li><a href="#p=165" class="map-pin">★ Thrillbilly Mud Club</a> – Błotny tor Thrillbilly Mud Club – tu zaczyna się wątek Billy&#x27;ego (misja Thrillbillies). 10 wygranych tu, na Gellhorn Raceway i Boone Speedway odblokowuje kod naprawy auta. <a href="/gta-6-misje-poboczne/">Czytaj poradnik →</a></li><li><a href="#p=87" class="map-pin">★ Gellhorn International Raceway</a> – Gellhorn International Raceway – tor wyścigowy wzorowany na Sebring. Jeden z trzech torów liczących się do kodu naprawy pojazdu. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li><li><a href="#p=89" class="map-pin">★ Pawn &amp; Gun</a> – Lombard z bronią Pawn &amp; Gun w Port Gellhorn – kupisz tu broń i amunicję. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=197" class="map-pin">★ Delights</a> – Klub Delights przy autostradzie. Na północ od niego, przy warsztacie Mosesa, jest darmowy garaż Port Gellhorn Station (po misji Daily Driver). <a href="/gta-6-misje/">Czytaj poradnik →</a></li><li><a href="#p=363" class="map-pin">★ Manifest Canyon</a> – Manifest Canyon – czerwone skały z medytacją Red Rocks, w pobliżu miejsca, gdzie tory przecinają szosę. <a href="/gta-6-medytacje/">Czytaj poradnik →</a></li></ul><h3>Ambrosia i Leonard County</h3><ul class="map-opisy"><li><a href="#p=131" class="map-pin">★ Sugar Mill</a> – Cukrownia Allied Crystal – jedyny duży pracodawca Ambrosii. Resztą okolicy rządzi gang motocyklowy Final Chapter. <a href="/gta-6-mapa/">Czytaj poradnik →</a></li><li><a href="#p=188" class="map-pin">★ Ambrosia Raceway Park</a> – Ambrosia Raceway – demolition derby. Wygrana daje ok. 3 800–6 300 $, a auto można wypożyczyć za kilkaset dolarów. <a href="/gta-6-pieniadze/">Czytaj poradnik →</a></li><li><a href="#p=825" class="map-pin">★ Leonard County Sheriff&#x27;s Office</a> – Belville w Leonard County. W tej okolicy stoi dom ze zdjęcia z GTA San Andreas – w garażu kryjówka spiskowca z notatkami o „J” i „L”. <a href="/gta-6-sekrety/">Czytaj poradnik →</a></li><li><a href="#p=33" class="map-pin">★ Evergreen Mall</a> – Evergreen Mall w Waning Sands. W okolicy jest minigolf Frontier Adventure Golf, pole Mount Hailes Club i medytacja Seaside na plaży na wschodzie. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li></ul><h3>Mount Kalaga i Lummox County</h3><ul class="map-opisy"><li><a href="#p=171" class="map-pin">★ Mount Kalaga</a> – Szczyt Mount Kalaga – kamienny krąg z ostatnią, 18. medytacją (Ascent Mountain). Odblokowuje się po wszystkich pozostałych. <a href="/gta-6-medytacje/">Czytaj poradnik →</a></li><li><a href="#p=629" class="map-pin">★ Lake Tallaloko</a> – Jezioro Tallaloko. Na północny zachód stąd, nad wodospadem, jest medytacja Waterfall. <a href="/gta-6-medytacje/">Czytaj poradnik →</a></li><li><a href="#p=895" class="map-pin">★ Jacob&#x27;s Tavern Bar</a> – Jacob&#x27;s Tavern w Millport – bar z bilardem obok Pay &#x27;n&#x27; Spray. Leży tu też książka o kowboju z New Austin, ukłon w stronę Red Dead Redemption. <a href="/gta-6-aktywnosci/">Czytaj poradnik →</a></li></ul>
 <h2 id="co-jest-na-mapie">Co jest na mapie</h2>
 <table>
 <thead>
@@ -130,8 +369,6 @@
 </tbody>
 </table>
 <p>Miejsca oznaczone jako „niepotwierdzone” to lokalizacje, których położenie społeczność jeszcze weryfikuje. Etykieta „można wejść do środka” oznacza budynki z wnętrzem widocznym w materiałach z gry.</p>
-<h2 id="najwazniejsze-obszary-na-mapie">Najważniejsze obszary na mapie</h2>
-<p>Najwięcej oznaczonych miejsc mają: <strong>Vice City</strong> i <strong>Vice Beach</strong> (odpowiednik Miami i Miami Beach), <strong>Key Lento</strong> na Leonida Keys, <strong>Port Gellhorn</strong>, <strong>Capri</strong>, <strong>Hamlet</strong> i <strong>Ambrosia</strong>. Opisy sześciu regionów Leonidy – Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosii i Mount Kalaga – znajdziesz w przewodniku <a href="/gta-6-mapa/">mapa GTA 6 – regiony Leonidy</a>.</p>
 <h2 id="skad-pochodza-dane">Skąd pochodzą dane</h2>
 <p>Rockstar nie opublikował pełnej mapy z gry. Podkład i położenia miejsc pochodzą z projektu <strong>gtadb.org</strong> (GTA VI Landmarks Map) i mapy społeczności <strong>YANIS GTA VI Community Map</strong>. Fani przez lata składali ją z trailerów, zrzutów ekranu i porównań ze Street View. Dane są udostępnione na licencji <strong>Creative Commons Uznanie autorstwa 4.0</strong>, a atrybucję widzisz w rogu mapy.</p>
 <p>To rekonstrukcja z materiałów <strong>sprzed premiery</strong>, więc drogi, linia brzegowa i położenie niektórych budynków mogą różnić się od gotowej gry. Będziemy aktualizować mapę wraz z nowymi danymi. Oficjalny plakat z mapą Leonidy pobierzesz ze strony Rockstar Games.</p>

@@ -129,7 +129,17 @@
       res.appendChild(li);
     });
   });
-  window.addEventListener("hashchange", function () { var hm = location.hash.match(/p=(\d+)/); if (hm) focus(+hm[1]); });
+  function region(k) {
+    var r = (T.regions || {})[k];
+    if (!r) return;
+    try { root.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {}
+    map.flyTo(r[0], r[1], { duration: 0.8 });
+  }
+  window.addEventListener("hashchange", function () {
+    var hm = location.hash.match(/p=(\d+)/); if (hm) return focus(+hm[1]);
+    var rm = location.hash.match(/r=([a-z-]+)/); if (rm) region(rm[1]);
+  });
+  var rm0 = location.hash.match(/r=([a-z-]+)/); if (rm0) setTimeout(function () { region(rm0[1]); }, 300);
 
   // pełny ekran
   document.getElementById("gm-full").onclick = function () {
