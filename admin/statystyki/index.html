@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Statystyki – panel Ograne.com</title><link rel="icon" href="/favicon.ico">
+<style>
+:root{--bg:#0b0a10;--p:#14121c;--l:rgba(255,255,255,.08);--t:#f3f0ea;--m:#a7a1b4;--pink:#ff3e8e;--sun:#ffb347}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:#ff6fae}.w{max-width:1200px;margin:0 auto;padding:24px}
+header{display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap;margin-bottom:22px}
+header h1{margin:0;font-size:26px}.nav a{margin-left:14px;font-weight:600;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.k{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:16px}.k b{display:block;font-size:30px;line-height:1.1}.k span{color:var(--m);font-size:13px}
+.box{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:18px;margin-bottom:22px}
+.box h2{margin:0 0 12px;font-size:18px}
+.links{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.links a{display:block;background:#1b1826;border:1px solid var(--l);border-radius:12px;padding:14px;text-decoration:none;color:var(--t);font-weight:700}
+.links a small{display:block;color:var(--m);font-weight:400;margin-top:2px}.links a:hover{border-color:var(--pink)}
+table{width:100%;border-collapse:collapse}td,th{padding:8px 6px;border-bottom:1px solid var(--l);text-align:left}th{color:var(--m);font-weight:600;font-size:13px}
+iframe{width:100%;height:900px;border:0;border-radius:12px;background:#fff}
+.empty{color:var(--m)}code{background:#1b1826;padding:2px 6px;border-radius:6px}
+@media(max-width:800px){.grid,.links{grid-template-columns:1fr 1fr}}
+</style></head><body><div class="w">
+<header><h1>📊 Statystyki Ograne.com</h1><div class="nav"><a href="/admin/">✏️ Wpisy</a><a href="/">↗ Strona</a></div></header>
+<div class="grid" id="kpi"></div>
+<div class="box"><h2>Ruch na stronie (Google Analytics)</h2><div id="ga"></div></div>
+<div class="box"><h2>Szybkie linki</h2><div class="links">
+<a href="https://analytics.google.com/" target="_blank" rel="noopener">Google Analytics<small>odwiedziny na żywo, źródła ruchu</small></a>
+<a href="https://search.google.com/search-console?resource_id=sc-domain%3Aograne.com" target="_blank" rel="noopener">Search Console<small>frazy, pozycje, indeksowanie</small></a>
+<a href="https://www.google.com/adsense/" target="_blank" rel="noopener">AdSense<small>zarobki z reklam</small></a>
+<a href="https://github.com/lvdvvsk/ograne-src/actions" target="_blank" rel="noopener">Publikacje<small>czy strona się zbudowała</small></a>
+</div></div>
+<div class="box"><h2>Ostatnio zaktualizowane wpisy</h2><table id="last"><tr><th>Wpis</th><th>Język</th><th>Aktualizacja</th></tr></table></div>
+</div>
+<script>
+// Po podpięciu Google Analytics wklej tu link „Umieść” z raportu Looker Studio:
+const LOOKER_EMBED_URL = "";
+const ga = document.getElementById("ga");
+ga.innerHTML = LOOKER_EMBED_URL
+  ? '<iframe src="' + LOOKER_EMBED_URL + '" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>'
+  : '<p class="empty">Raport pojawi się tu po podpięciu Google Analytics i utworzeniu raportu w Looker Studio. Widzi go tylko konto Google, któremu go udostępnisz.</p>';
+fetch("strona.json").then(r => r.json()).then(d => {
+  const k = [["Wszystkie strony", d.pages], ["Wpisy po polsku", d.per_lang.pl || 0], ["Języki", Object.keys(d.per_lang).length], ["Słowa (PL)", d.words_pl.toLocaleString("pl-PL")]];
+  document.getElementById("kpi").innerHTML = k.map(([a, b]) => `<div class="k"><b>${b}</b><span>${a}</span></div>`).join("");
+  document.getElementById("last").insertAdjacentHTML("beforeend", d.last.map(x => `<tr><td><a href="${x.url}" target="_blank">${x.title}</a></td><td>${x.lang.toUpperCase()}</td><td>${x.updated}</td></tr>`).join(""));
+}).catch(() => {});
+</script></body></html>

@@ -1,0 +1,76 @@
+# Panel administratora Ograne.com (Sveltia CMS)
+# Logowanie: "Sign in with Token" + osobisty token GitHub z dostępem tylko do repozytorium ograne-src.
+backend:
+  name: github
+  repo: lvdvvsk/ograne-src
+  branch: main
+  commit_messages:
+    create: "Nowy wpis: {{slug}}"
+    update: "Edycja wpisu: {{slug}}"
+    delete: "Usunięcie wpisu: {{slug}}"
+    uploadMedia: "Nowe zdjęcie: {{path}}"
+    deleteMedia: "Usunięcie zdjęcia: {{path}}"
+
+site_url: https://ograne.com
+display_url: https://ograne.com
+logo_url: /static/icon-192.png
+locale: pl
+media_folder: static/img
+public_folder: /static/img
+
+collections:
+  - name: wpisy
+    label: Wpisy po polsku
+    label_singular: wpis
+    description: "Artykuły i poradniki widoczne na ograne.com. Nowy wpis pojawi się na stronie głównej w sekcji „Więcej z Leonidy” ok. 1–2 minut po zapisaniu."
+    folder: content/pl
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{title}} · {{updated}}"
+    sortable_fields: [updated, title]
+    preview_path: "{{slug}}/"
+    fields:
+      - {label: "Adres strony (slug)", name: slug, widget: string, pattern: ['^[a-z0-9-]+$', "Tylko małe litery, cyfry i myślniki, np. gta-6-nowy-poradnik"], hint: "Zacznij od gta-6-, np. gta-6-najlepsze-auta. Nie zmieniaj po publikacji."}
+      - {label: "Tytuł w Google (title)", name: title, widget: string, hint: "50–65 znaków, fraza na początku, np. „GTA 6 najlepsze auta: …”"}
+      - {label: "Nagłówek na stronie (H1)", name: h1, widget: string}
+      - {label: "Kategoria (mały napis nad tytułem)", name: kicker, widget: string, required: false, hint: "np. Poradnik, Sekrety, Aktualności"}
+      - {label: "Krótka nazwa", name: nav, widget: string, required: false, hint: "np. Najlepsze auta – w listach i okruszkach"}
+      - {label: "Wstęp (lead)", name: lead, widget: text, hint: "1–2 zdania pod tytułem"}
+      - {label: "Opis w Google (description)", name: description, widget: text, hint: "140–160 znaków"}
+      - {label: "Zdjęcie główne", name: image, widget: image, required: false}
+      - {label: "Opis zdjęcia (alt)", name: image_alt, widget: string, required: false}
+      - {label: "Źródło zdjęcia", name: image_credit, widget: string, required: false, hint: "np. Źródło: Rockstar Games"}
+      - {label: "Data publikacji", name: published, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, default: "{{now}}"}
+      - {label: "Data aktualizacji", name: updated, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, default: "{{now}}"}
+      - {label: "Czas czytania (minuty)", name: read, widget: number, value_type: int, required: false, default: 4}
+      - label: "W skrócie (punkty na górze)"
+        name: tldr
+        widget: list
+        required: false
+        field: {label: "Punkt", name: punkt, widget: string}
+      - label: "Najczęstsze pytania (FAQ)"
+        name: faq
+        widget: list
+        required: false
+        fields:
+          - {label: "Pytanie", name: q, widget: string}
+          - {label: "Odpowiedź", name: a, widget: text}
+      - label: "Źródła"
+        name: sources
+        widget: list
+        required: false
+        fields:
+          - {label: "Nazwa", name: name, widget: string}
+          - {label: "Adres URL", name: url, widget: string}
+      - {label: "Treść", name: body, widget: markdown}
+      # --- ustawienia zaawansowane (nie musisz ich zmieniać) ---
+      - {label: "Powiązane wpisy (adresy)", name: related, widget: list, required: false, hint: "np. gta-6-mapa-interaktywna"}
+      - {label: "Kolejność w menu", name: order, widget: number, value_type: int, required: false, default: 60}
+      - {label: "Pokaż w menu głównym", name: in_nav, widget: boolean, required: false, default: false}
+      - {label: "Zawiera spoilery", name: spoilers, widget: boolean, required: false, default: false}
+      - {label: "Lista do odhaczania (checklista)", name: checklist, widget: boolean, required: false, default: false}
+      - {label: "Typ strony", name: type, widget: select, options: [article, page], required: false, default: article}
